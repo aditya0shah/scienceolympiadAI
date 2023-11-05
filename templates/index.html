@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Science Olympiad</h1>
+    <div id="chat-container">
+        <div id="chat-box">
+            {% if user_input %}
+                <div class="user-message">{{ user_input }}</div>
+            {% endif %}
+            {% if chatbot_response %}
+                <div class="chatbot-message">{{ chatbot_response }}</div>
+            {% endif %}
+        </div>
+        <form action="/chat" method="post">
+            <input type="text" id="user-input" name="user_input" placeholder="Type your question...">
+            <input type="submit" value="Send">
+        </form>
+    </div>
+</body>
+</html>
