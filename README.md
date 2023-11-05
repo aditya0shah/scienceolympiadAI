@@ -1,4 +1,4 @@
-# scienceolympiadai
+# ScienceOlympiadAI
 AI for Science Olympiad for answering questions, getting summaries, etc
 
 To run:

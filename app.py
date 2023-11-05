@@ -3,6 +3,7 @@ from langchain import OpenAI, PromptTemplate, LLMChain
 from langchain.chains import LLMChain, ConversationChain
 from langchain.chains.conversation.memory import ConversationSummaryBufferMemory
 from langchain.callbacks import get_openai_callback
+from langchain.chat_models import ChatOpenAI
 import openai
 import os
 from dotenv import load_dotenv
@@ -15,10 +16,10 @@ app = Flask(__name__)
 
 
 
-llm = OpenAI(
+llm = ChatOpenAI(
     temperature = 0, 
     openai_api_key = OPENAI_API_KEY,
-    model_name='text-davinci-003'
+    model_name='gpt-3.5-turbo'
 )
 
 def count_tokens(chain, query):
